@@ -1,0 +1,19 @@
+  
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apiconversao
+spec:  
+  selector:
+    matchLabels:
+      app: apiconversao
+  template:
+    metadata:
+      labels:
+        app: apiconversao
+    spec: 
+      containers:
+        - name: apiconversao
+          image: calixtofelipe/api-conversao:v1 
+          ports:
+            - containerPort: 5000
